@@ -35,6 +35,32 @@ public class Job {
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
     @Override
+    public String toString() {
+        String jobId = Integer.toString(id);
+        String jobName = name;
+        String jobEmployer = employer.toString();
+        String jobLocation = location.toString();
+        String jobPositionType = positionType.toString();
+        String jobCoreCompetency = coreCompetency.toString();
+//        check if data is available, if not return error message
+        if (jobId.isEmpty()) { jobId = "Data not available"; }
+        if (jobName.isEmpty()) { jobName = "Data not available"; }
+        if (jobEmployer.isEmpty()) { jobEmployer = "Data not available"; }
+        if (jobLocation.isEmpty()) { jobLocation = "Data not available"; }
+        if (jobPositionType.isEmpty()) { jobPositionType = "Data not available"; }
+        if (jobCoreCompetency.isEmpty()) { jobCoreCompetency = "Data not available"; }
+
+        return "\n" +
+                "ID: " + jobId + "\n" +
+                "Name: " + jobName + "\n" +
+                "Employer: " + jobEmployer + "\n" +
+                "Location: " + jobLocation + "\n" +
+                "Position Type: " + jobPositionType + "\n" +
+                "Core Competency: " + jobCoreCompetency +
+                "\n";
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Job)) return false;
