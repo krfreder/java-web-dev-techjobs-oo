@@ -6,12 +6,12 @@ public class Employer {
     private int id;
     private static int nextId = 1;
     private String value;
-
+// assigning new id for each new Employer object by iterating++
     public Employer() {
         id = nextId;
         nextId++;
     }
-
+// takes external input to assign the value to the object & initialized id w/this();
     public Employer(String value) {
         this();
         this.value = value;
