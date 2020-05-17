@@ -13,6 +13,7 @@ public class JobTest {
     Job testJob_3;
     Job testJob_4;
     Job testJob_5;
+    Job testJob_6;
 
     @Before
     public void createJobObject() {
@@ -21,6 +22,7 @@ public class JobTest {
         testJob_3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         testJob_4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         testJob_5 = new Job("Product tester", new Employer(), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        testJob_6 = new Job("", new Employer(), new Location(), new PositionType(), new CoreCompetency());
     }
 
 //    @Test
@@ -33,7 +35,7 @@ public class JobTest {
     public void testSettingJobId() {
         assertTrue((testJob_1.getId() == 1) && (testJob_2.getId() == 2));
     }
-
+//
     @Test
     public void testJobConstructorSetsAllFields() {
         assertTrue(testJob_3.getEmployer() instanceof Employer);
@@ -51,10 +53,6 @@ public class JobTest {
     public void testJobsForEquality() {
         assertFalse(testJob_3 == testJob_4);
     }
-//    testing toString method: when passed Job object, returns string w/blank line before and after job info
-//    contains label for each field, each field own line
-//    if field == "" add "Data not available" after label
-//    BONUS: if Job object ONLY contains data for id field, should return "OOPS! This job does not seem to exist."
     @Test
     public void testToStringReturnsStringSandwichedWithBlankLine() {
         assertTrue(testJob_3.toString().startsWith("\n"));
@@ -75,5 +73,11 @@ public class JobTest {
     public void testEmptyFieldReturnsErrorMessage() {
         assertTrue(testJob_5.toString().contains("Data not available"));
     }
+
+//    BONUS: if Job object ONLY contains data for id field, should return "OOPS! This job does not seem to exist."
+//    @Test
+//    public void testAllFieldsEmptyButIdReturnsErrorMessage() {
+//        assertEquals(true, testJob_6.toString().contains("OOPS! This job does not seem to exist."));
+//    }
 
 }

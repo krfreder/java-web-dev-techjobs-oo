@@ -36,22 +36,16 @@ public class Job {
     //  match.
     @Override
     public String toString() {
-        Integer jobId = id;
-        String jobName = name;
-        String jobEmployer = employer.getValue();
-        String jobLocation = location.getValue();
-        String jobPositionType = positionType.getValue();
-        String jobCoreCompetency = coreCompetency.getValue();
-//        check if data is available, if not return error message
-//        if (jobId == null) { jobId = "Data not available"; }
-        if (jobName == null) { jobName = "Data not available"; }
-        if (jobEmployer == null) { jobEmployer = "Data not available"; }
-        if (jobLocation == null) { jobLocation = "Data not available"; }
-        if (jobPositionType == null) { jobPositionType = "Data not available"; }
-        if (jobCoreCompetency == null) { jobCoreCompetency = "Data not available"; }
+        String missingData = "Data not available";
+        String jobId = (Integer.toString(id) == null) ? missingData : Integer.toString(id);
+        String jobName = (this.name == null) ? missingData : this.name;
+        String jobEmployer = (this.employer.getValue() == null) ? missingData : this.employer.getValue();
+        String jobLocation = (this.location.getValue() == null) ? missingData : this.location.getValue();
+        String jobPositionType = (this.positionType.getValue() == null) ? missingData : this.positionType.getValue();
+        String jobCoreCompetency = (this.positionType.getValue() == null) ? missingData : this.coreCompetency.getValue();
 
         return "\n" +
-//                "ID: " + jobId + "\n" +
+                "ID: " + jobId + "\n" +
                 "Name: " + jobName + "\n" +
                 "Employer: " + jobEmployer + "\n" +
                 "Location: " + jobLocation + "\n" +
@@ -59,7 +53,6 @@ public class Job {
                 "Core Competency: " + jobCoreCompetency +
                 "\n";
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
