@@ -36,6 +36,7 @@ public class Job {
     //  match.
     @Override
     public String toString() {
+//        maybe call value and not toString? , is isEmpty() appropriate?
         String jobId = Integer.toString(id);
         String jobName = name;
         String jobEmployer = employer.toString();
