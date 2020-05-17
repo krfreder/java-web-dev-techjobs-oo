@@ -36,23 +36,22 @@ public class Job {
     //  match.
     @Override
     public String toString() {
-//        maybe call value and not toString? , is isEmpty() appropriate?
-        String jobId = Integer.toString(id);
+        Integer jobId = id;
         String jobName = name;
-        String jobEmployer = employer.toString();
-        String jobLocation = location.toString();
-        String jobPositionType = positionType.toString();
-        String jobCoreCompetency = coreCompetency.toString();
+        String jobEmployer = employer.getValue();
+        String jobLocation = location.getValue();
+        String jobPositionType = positionType.getValue();
+        String jobCoreCompetency = coreCompetency.getValue();
 //        check if data is available, if not return error message
-        if (jobId.isEmpty()) { jobId = "Data not available"; }
-        if (jobName.isEmpty()) { jobName = "Data not available"; }
-        if (jobEmployer.isEmpty()) { jobEmployer = "Data not available"; }
-        if (jobLocation.isEmpty()) { jobLocation = "Data not available"; }
-        if (jobPositionType.isEmpty()) { jobPositionType = "Data not available"; }
-        if (jobCoreCompetency.isEmpty()) { jobCoreCompetency = "Data not available"; }
+//        if (jobId == null) { jobId = "Data not available"; }
+        if (jobName == null) { jobName = "Data not available"; }
+        if (jobEmployer == null) { jobEmployer = "Data not available"; }
+        if (jobLocation == null) { jobLocation = "Data not available"; }
+        if (jobPositionType == null) { jobPositionType = "Data not available"; }
+        if (jobCoreCompetency == null) { jobCoreCompetency = "Data not available"; }
 
         return "\n" +
-                "ID: " + jobId + "\n" +
+//                "ID: " + jobId + "\n" +
                 "Name: " + jobName + "\n" +
                 "Employer: " + jobEmployer + "\n" +
                 "Location: " + jobLocation + "\n" +
