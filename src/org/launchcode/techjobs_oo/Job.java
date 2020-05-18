@@ -37,7 +37,7 @@ public class Job {
         String missingData = "Data not available";
         String jobId = (Integer.toString(id) == null) ? missingData : Integer.toString(id);
         String jobName = (this.name == null) ? missingData : this.name;
-        String jobEmployer = (this.employer.getValue() == null) ? missingData : this.employer.getValue();
+        String jobEmployer = (this.employer.getValue() == "") ? missingData : this.employer.getValue();
         String jobLocation = (this.location.getValue() == null) ? missingData : this.location.getValue();
         String jobPositionType = (this.positionType.getValue() == null) ? missingData : this.positionType.getValue();
         String jobCoreCompetency = (this.positionType.getValue() == null) ? missingData : this.coreCompetency.getValue();
