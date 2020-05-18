@@ -36,11 +36,11 @@ public class Job {
     public String toString() {
         String missingData = "Data not available";
         String jobId = (Integer.toString(id) == null) ? missingData : Integer.toString(id);
-        String jobName = (this.name == null) ? missingData : this.name;
-        String jobEmployer = (this.employer.getValue() == "") ? missingData : this.employer.getValue();
-        String jobLocation = (this.location.getValue() == null) ? missingData : this.location.getValue();
-        String jobPositionType = (this.positionType.getValue() == null) ? missingData : this.positionType.getValue();
-        String jobCoreCompetency = (this.positionType.getValue() == null) ? missingData : this.coreCompetency.getValue();
+        String jobName = (this.name == null || this.name == "") ? missingData : this.name;
+        String jobEmployer = (this.employer.getValue() == null || this.employer.getValue() == "") ? missingData : this.employer.getValue();
+        String jobLocation = (this.location.getValue() == null || this.location.getValue() == "") ? missingData : this.location.getValue();
+        String jobPositionType = (this.positionType.getValue() == null || this.positionType.getValue() == "") ? missingData : this.positionType.getValue();
+        String jobCoreCompetency = (this.positionType.getValue() == null || this.coreCompetency.getValue() == "") ? missingData : this.coreCompetency.getValue();
 
         return "\n" +
                 "ID: " + jobId + "\n" +
