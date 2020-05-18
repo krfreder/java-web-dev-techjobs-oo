@@ -12,17 +12,10 @@ public abstract class JobField {
     id = nextId;
     nextId++;
     }
-
     public JobField(String value) {
         this();
         this.value = value;
     }
-//    common getters & setters: getId, getValue, setValue
-    public int getId() { return id; }
-
-    public String getValue() { return value; }
-
-    public void setValue(String value) { this.value = value; }
     //    common identical custom methods: toString, equals, hashCode
     @Override
     public String toString() {
@@ -41,4 +34,10 @@ public abstract class JobField {
     public int hashCode() {
         return Objects.hash(getId());
     }
+//    common getters & setters: getId, getValue, setValue
+    public int getId() { return id; }
+
+    public String getValue() { return value; }
+
+    public void setValue(String value) { this.value = value; }
 }

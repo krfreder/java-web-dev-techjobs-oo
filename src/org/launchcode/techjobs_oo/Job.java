@@ -2,8 +2,6 @@ package org.launchcode.techjobs_oo;
 
 import java.util.Objects;
 
-//ex: to get employer name (job instance of Job) - String employerName = job.getEmployer().getValue();
-//ex: to print data stored in value of Employer class - System.out.println(job.getEmployer); - this works b/c the toString() method of Employer returns the value field
 public class Job {
     private int id;
     private static int nextId = 1;
@@ -53,6 +51,7 @@ public class Job {
                 "Core Competency: " + jobCoreCompetency +
                 "\n";
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

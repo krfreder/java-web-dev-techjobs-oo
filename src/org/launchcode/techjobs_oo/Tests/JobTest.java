@@ -42,17 +42,18 @@ public class JobTest {
         assertTrue(testJob_3.getLocation() instanceof Location);
         assertTrue(testJob_3.getPositionType() instanceof PositionType);
         assertTrue(testJob_3.getCoreCompetency() instanceof CoreCompetency);
-        assertTrue(testJob_3.getName() == "Product tester");
-        assertTrue(testJob_3.getEmployer().getValue() == "ACME");
-        assertTrue(testJob_3.getLocation().getValue() == "Desert");
-        assertTrue(testJob_3.getPositionType().getValue() == "Quality control");
-        assertTrue(testJob_3.getCoreCompetency().getValue() == "Persistence");
+        assertSame("Product tester", testJob_3.getName());
+        assertSame("ACME", testJob_3.getEmployer().getValue());
+        assertSame("Desert", testJob_3.getLocation().getValue());
+        assertSame("Quality control", testJob_3.getPositionType().getValue());
+        assertSame("Persistence", testJob_3.getCoreCompetency().getValue());
     }
 
     @Test
     public void testJobsForEquality() {
-        assertFalse(testJob_3 == testJob_4);
+        assertNotSame(testJob_3, testJob_4);
     }
+
     @Test
     public void testToStringReturnsStringSandwichedWithBlankLine() {
         assertTrue(testJob_3.toString().startsWith("\n"));
